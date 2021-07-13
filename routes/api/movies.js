@@ -33,7 +33,7 @@ router.get('/:id', (req, res) => {
 
 
 //Post Video
-router.post('/',
+router.post('/new',
     passport.authenticate('jwt', { session: false }),
     (req, res) => {
         const { errors, isValid } = validateMovieInput(req.body);

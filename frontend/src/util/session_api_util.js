@@ -9,6 +9,7 @@ export const setAuthToken = (token) => {
 };
 
 export const register = (data) => {
+    debugger
     return axios.post("/api/users/register", data);
 };
 

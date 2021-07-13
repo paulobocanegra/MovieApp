@@ -8,7 +8,7 @@ const mapStateToProps = (state) => {
         errors: state.errors.session,
     };
 };
-
+    
 const mapDispatchToProps = (dispatch) => {
     return {
         register: (user) => dispatch(register(user)),

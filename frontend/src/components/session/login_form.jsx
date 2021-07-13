@@ -2,15 +2,12 @@ import React from "react";
 // import { Link } from 'react-router-dom';
 import { withRouter } from "react-router-dom";
 
-class RegisterForm extends React.Component {
+class LoginForm extends React.Component {
     constructor(props) {
         super(props);
         this.state = {
-            firstName: "",
-            lastName: "",
             email: "",
             password: "",
-            password2: "",
             errors: {},
         };
 
@@ -21,14 +18,11 @@ class RegisterForm extends React.Component {
     handleSubmit(e) {
         e.preventDefault();
         let user = {
-            firstName: this.state.firstName,
-            lastName: this.state.lastName,
             email: this.state.email,
             password: this.state.password,
-            password2: this.state.password2,
         };
-        this.props.register(user)
-            // .then(() => this.props.login(user)).then(this.props.history.push('/movies'));
+        this.props.login(user, this.props.history)
+        // .then(() => this.props.login(user)).then(this.props.history.push('/movies'));
     }
 
     update(field) {
@@ -48,39 +42,22 @@ class RegisterForm extends React.Component {
         );
     }
 
-    render(){
+    render() {
         return (
             <div className="register-form-wrapper">
                 <form onSubmit={this.handleSubmit}>
-                    <input 
-                        type="text" 
-                        value={this.state.firstName}
-                        onChange={this.update("firstName")}
-                        placeholder="Please enter your first name"
-                    />
-                    <input 
-                        type="text" 
-                        value={this.state.lastName}
-                        onChange={this.update("lastName")}
-                        placeholder="Please enter your last name"
-                    />
-                    <input 
-                        type="text" 
+                    <input
+                        type="text"
                         value={this.state.email}
                         onChange={this.update("email")}
                         placeholder="Please enter your email"
                     />
-                    <input 
-                        type="password" 
+                    <input
+                        type="password"
                         value={this.state.password}
                         onChange={this.update("password")}
                     />
-                    <input 
-                        type="password" 
-                        value={this.state.password2}
-                        onChange={this.update("password2")}
-                    />
-                    <input className="signup-button" type="submit" value="Register" />
+                    <input className="signup-button" type="submit" value="Login" />
                     {this.renderErrors()}
                 </form>
             </div>
@@ -88,4 +65,4 @@ class RegisterForm extends React.Component {
     }
 }
 
-export default withRouter(RegisterForm);
+export default withRouter(LoginForm);

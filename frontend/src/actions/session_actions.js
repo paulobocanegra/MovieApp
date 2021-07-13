@@ -11,8 +11,9 @@ export const receiveCurrentUser = (currentUser) => ({
     currentUser,
 });
 
-export const receiveUserSignIn = () => ({
+export const receiveUserSignIn = (user) => ({
     type: RECEIVE_USER_SIGN_IN,
+    user
 });
 
 export const receiveErrors = (errors) => ({
@@ -24,11 +25,17 @@ export const logoutUser = () => ({
     type: RECEIVE_USER_LOGOUT,
 });
 
-export const register = (user) => (dispatch) =>
-    SessionAPIUtil.register(user).then(
-        () => dispatch(receiveUserSignIn()),
-        (err) => dispatch(receiveErrors(err.response.data))
+export const register = (user) => (dispatch) => {
+    debugger
+    return SessionAPIUtil.register(user).then(
+        (user) => dispatch(receiveUserSignIn(user)),
+        (err) => {
+            console.log(err)
+            dispatch(receiveErrors(err.response.data))
+        }
     );
+
+}
 
 export const login = (user) => (dispatch) =>
     SessionAPIUtil.login(user)
