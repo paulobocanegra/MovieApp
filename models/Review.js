@@ -15,9 +15,13 @@ const ReviewSchema = new Schema({
         required: true
     },
     user: { type: mongoose.Schema.ObjectId, ref: 'User' },
-    movie: { type: mongoose.Schema.ObjectId, ref: 'Movie' }
+    movie: { type: mongoose.Schema.ObjectId, ref: 'Movie' },
+    date: {
+        type: Date,
+        default: Date.now
+    }
 }, {
     timestamps: true
 })
 
-module.exports = Review = mongoose.model("Movie", ReviewSchema);
+module.exports = Review = mongoose.model("Review", ReviewSchema);

@@ -11,10 +11,14 @@ const MovieSchema = new Schema({
         required: true
     },
     reviews: {
-        type: Object,
+        type: String,
         required: true
     },
-    user: { type: mongoose.Schema.ObjectId, ref: 'User' }
+    user: { type: mongoose.Schema.ObjectId, ref: 'User' },
+    date: {
+        type: Date,
+        default: Date.now
+    }
 }, {
     timestamps: true
 })

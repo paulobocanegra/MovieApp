@@ -2,32 +2,32 @@ const express = require('express');
 const router = express.Router();
 const mongoose = require('mongoose');
 const passport = require('passport');
-const Movie = require('../../models/Movies');
+const Review = require('../../models/Review');
 const validateMovieInput = require('../../validation/movies');
 
 
-//Fetch Video
+//Fetch Reviews
 router.get('/', (req, res) => {
-    Movie.find()
+    Review.find()
         .sort({ date: -1 })
-        .then(movies => res.json(movies))
-        .catch(err => res.status(404).json({ nomoviesfound: 'No movies found' }));
+        .then(reviews => res.json(reviews))
+        .catch(err => res.status(404).json({ noreviewsfound: 'No reviews found' }));
 });
 
-router.get('/user/:user_id', (req, res) => {
-    Movie.find({ user: req.params.user_id })
-        .then(movies => res.json(movies))
+router.get('/movie/:movie_id', (req, res) => {
+    Review.find({ movie: req.params.movie_id })
+        .then(reviews => res.json(reviews))
         .catch(err =>
-            res.status(404).json({ nomoviesfound: 'No movies found with specified user' }
+            res.status(404).json({ noreviewsfound: 'No reviews found with this movie' }
             )
         );
 });
 
 router.get('/:id', (req, res) => {
-    Movie.findById(req.params.id)
-        .then(movie => res.json(movie))
+    Review.findById(req.params.id)
+        .then(review => res.json(review))
         .catch(err =>
-            res.status(404).json({ nomoviefound: 'No movie found with that ID' })
+            res.status(404).json({ noreviewfound: 'No review found with that ID' })
         );
 });
 
@@ -43,13 +43,12 @@ router.post('/',
         }
 
         const newMovie = new Movie({
-            title: req.body.title,
+            name: req.body.name,
             rating: req.body.rating,
-            reviews: req.body.reviews,
-            user: req.body.user_id
+            body: req.body.body,
+            user: req.user.id,
+            movie: req.params.movie_id
         });
-//TEST ASSIGNMENT OF REVIEW INSIDE OF POJO REVIEWS
-
 
         newMovie.save().then(movie => res.json(movie));
     }

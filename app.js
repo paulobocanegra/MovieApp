@@ -7,6 +7,7 @@ const bodyParser = require('body-parser');
 
 const users = require("./routes/api/users");
 const movies = require("./routes/api/movies");
+const reviews = require("./routes/api/reviews");
 
 mongoose
     .connect(db, { useNewUrlParser: true, useUnifiedTopology: true })

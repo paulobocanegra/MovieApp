@@ -14,7 +14,7 @@ module.exports = function validateMovieInput(data) {
         errors.title = 'Title field is required';
     }
 
-    if (Validator.isFloat(data.rating, { min: 1, max: 5 })) {
+    if (!Validator.isFloat(data.rating, { min: 1, max: 5 })) {
         errors.rating = 'Rating must be between 1 and 5';
     }
 
