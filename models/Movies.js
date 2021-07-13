@@ -11,7 +11,7 @@ const MovieSchema = new Schema({
         required: true
     },
     reviews: {
-        type: String,
+        type: Object,
         required: true
     },
     user: { type: mongoose.Schema.ObjectId, ref: 'User' },
