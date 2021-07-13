@@ -12,7 +12,7 @@ const MovieSchema = new Schema({
     },
     reviews: {
         type: Object,
-        required: false
+        required: true
     },
     user: { type: mongoose.Schema.ObjectId, ref: 'User' }
 }, {
