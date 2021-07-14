@@ -1,0 +1,11 @@
+.session-wrapper{
+    margin-top: 5em;
+    padding: 2em;
+    display: flex;
+    flex-direction: row;
+}
+
+.app-title{
+    margin-top: 3em;
+    text-align: center;
+}
