@@ -28,7 +28,7 @@ class RegisterForm extends React.Component {
             password2: this.state.password2,
         };
         this.props.register(user)
-            // .then(() => this.props.login(user)).then(this.props.history.push('/movies'));
+            .then(() => this.props.login(user)).then(this.props.history.push('/movies'));
     }
 
     update(field) {
