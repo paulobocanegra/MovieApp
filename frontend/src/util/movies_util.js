@@ -9,7 +9,7 @@ export const fetchMovie = (movieId) => (
 );
 
 export const createMovie = (movie) => (
-    axios.post(`/api/movies/`, movie)
+    axios.post(`/api/movies/new`, movie)
 );
 
 export const deleteMovie = (movieId) => {

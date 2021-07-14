@@ -26,7 +26,7 @@ export const logoutUser = () => ({
 });
 
 export const register = (user) => (dispatch) => {
-    debugger
+    
     return SessionAPIUtil.register(user).then(
         (user) => dispatch(receiveUserSignIn(user)),
         (err) => {

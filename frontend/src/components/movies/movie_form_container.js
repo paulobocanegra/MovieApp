@@ -1,6 +1,7 @@
 import { connect } from "react-redux";
 import { composeMovie } from "../../actions/movie_actions";
-import RegisterForm from "./register_form";
+import { logout }  from '../../actions/session_actions'
+import MovieForm from "./movie_form";
 
 const mapStateToProps = (state) => {
     return {
@@ -11,8 +12,9 @@ const mapStateToProps = (state) => {
 
 const mapDispatchToProps = (dispatch) => {
     return {
-        composeMovie: (movie) => dispatch(composeMovie(movie))
+        composeMovie: (movie) => dispatch(composeMovie(movie)),
+        logout: () => dispatch(logout())
     };
 };
 
-export default connect(mapStateToProps, mapDispatchToProps)(RegisterForm);
+export default connect(mapStateToProps, mapDispatchToProps)(MovieForm);

@@ -37,6 +37,7 @@ router.post('/new',
     passport.authenticate('jwt', { session: false }),
     (req, res) => {
         const { errors, isValid } = validateMovieInput(req.body);
+        console.log(req.body)
 
         if (!isValid) {
             return res.status(400).json(errors);
@@ -48,6 +49,8 @@ router.post('/new',
             reviews: req.body.reviews,
             user: req.body.user_id
         });
+
+        console.log(newMovie)
 //TEST ASSIGNMENT OF REVIEW INSIDE OF POJO REVIEWS
 
 

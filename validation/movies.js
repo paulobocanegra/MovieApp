@@ -18,9 +18,9 @@ module.exports = function validateMovieInput(data) {
         errors.rating = 'Rating must be between 1 and 5';
     }
 
-    if (Validator.isEmpty(data.reviews)) {
-        errors.reviews = 'Review field is required';
-    }
+    // if (Validator.isEmpty(data.reviews)) {
+    //     errors.reviews = 'Review field is required';
+    // }
     
 
     return {

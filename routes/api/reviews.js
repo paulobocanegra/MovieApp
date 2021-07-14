@@ -32,8 +32,8 @@ router.get('/:id', (req, res) => {
 });
 
 
-//Post Video
-router.post('/',
+//Post Review
+router.post('/new',
     passport.authenticate('jwt', { session: false }),
     (req, res) => {
         const { errors, isValid } = validateMovieInput(req.body);
@@ -41,8 +41,10 @@ router.post('/',
         if (!isValid) {
             return res.status(400).json(errors);
         }
+        // const movie = Movie.findById(req.params.movie_id)
 
-        const newMovie = new Movie({
+        const newReview = new Review({
+            title: req.body.title,
             name: req.body.name,
             rating: req.body.rating,
             body: req.body.body,
@@ -50,7 +52,11 @@ router.post('/',
             movie: req.params.movie_id
         });
 
-        newMovie.save().then(movie => res.json(movie));
+        console.log(newReview)
+
+        newReview.save().then((review) => res.json(review));
+
+        // movie.reviews.push(newReview)
     }
 );
 
