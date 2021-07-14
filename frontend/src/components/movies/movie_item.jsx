@@ -10,7 +10,7 @@ class Movie extends React.Component{
                 <div className="movie-box">
                     <p>{this.props.movie.title} </p>
                     <p>Rating:{this.props.movie.rating}</p>
-                    <button >Read Review</button>
+                    <Link className="write-review-link" to={`movies/${this.props.movie._id}`}>Read Reviews</Link>
                     <Link className="write-review-link" to={`/movies/${this.props.movie._id}/review`}>Write Review</Link>
                 </div>
             </div>

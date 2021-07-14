@@ -3,7 +3,7 @@ import { composeReview } from "../../actions/review_actions";
 
 import CreateReview from "./create_review";
 
-const mapStateToProps = (state, ownProps) => {
+const mapStateToProps = (state) => {
   // console.log(state.entities.movies._id)
   let locationArr = window.location.hash.split("/")
   let movieId = locationArr[locationArr.length - 2]

@@ -9,7 +9,7 @@ export const fetchReview = (reviewId) => (
 );
 
 export const fetchMovieReviews = (movieId) => (
-    axios.get(`/api/movies/${movieId}`)
+    axios.get(`/api/reviews/${movieId}`)
 );
 
 export const createReview = (review) => (

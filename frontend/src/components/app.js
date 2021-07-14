@@ -7,10 +7,12 @@ import MovieIndexContainer from "./movies/movies_index_container";
 import MovieFormContainer from "./movies/movie_form_container";
 // import MovieShowContainer from "./movies/movie_show_container";
 import CreateReviewContainer from "./reviews/create_review_container"
+import MovieShowContainer from "./movies/movie_show_container"
 
 const App = () => (
     <Switch>
         <ProtectedRoute exact path="/movies/:movie_id/review" component={CreateReviewContainer}/>
+        <ProtectedRoute exact path="/movies/:movie_id/" component={MovieShowContainer}/>
         <ProtectedRoute exact path="/movies/new" component={MovieFormContainer} />
         <ProtectedRoute exact path="/movies" component={MovieIndexContainer} />
         <AuthRoute exact path="/" component={MainPage} />
