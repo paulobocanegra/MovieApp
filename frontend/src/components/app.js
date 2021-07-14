@@ -7,7 +7,7 @@ import MovieIndexContainer from "./movies/movies_index_container"
 
 const App = () => (
     <Switch>
-        <AuthRoute exact path="/movies" component={MovieIndexContainer} />
+        <ProtectedRoute exact path="/movies" component={MovieIndexContainer} />
         <AuthRoute exact path="/" component={MainPage} />
         <Redirect to="/" />
     </Switch>

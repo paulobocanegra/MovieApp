@@ -2,6 +2,9 @@ import React from "react"
 import Movie from "./movie_item"
 
 class MoviesIndex extends React.Component{
+    constructor(props){
+        super(props)
+    }
 
     componentDidMount() {
         this.props.fetchMovies()
@@ -16,6 +19,7 @@ class MoviesIndex extends React.Component{
                 {this.props.movies.map((movie) => (<Movie
                     movie={movie}
                     key={movie.id}
+                    logout={this.props.logout}
                 />))}
             </div>
         )

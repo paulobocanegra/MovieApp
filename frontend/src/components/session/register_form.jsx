@@ -52,34 +52,49 @@ class RegisterForm extends React.Component {
         return (
             <div className="register-form-wrapper">
                 <form onSubmit={this.handleSubmit}>
-                    <input 
-                        type="text" 
-                        value={this.state.firstName}
-                        onChange={this.update("firstName")}
-                        placeholder="Please enter your first name"
-                    />
-                    <input 
-                        type="text" 
-                        value={this.state.lastName}
-                        onChange={this.update("lastName")}
-                        placeholder="Please enter your last name"
-                    />
-                    <input 
-                        type="text" 
-                        value={this.state.email}
-                        onChange={this.update("email")}
-                        placeholder="Please enter your email"
-                    />
-                    <input 
-                        type="password" 
-                        value={this.state.password}
-                        onChange={this.update("password")}
-                    />
-                    <input 
-                        type="password" 
-                        value={this.state.password2}
-                        onChange={this.update("password2")}
-                    />
+                    <label> First Name:
+                        <input 
+                            type="text" 
+                            value={this.state.firstName}
+                            onChange={this.update("firstName")}
+                            placeholder="Please enter your first name"
+                        />
+                    </label>
+                    <br />
+                    <label> Last Name:
+                        <input 
+                            type="text" 
+                            value={this.state.lastName}
+                            onChange={this.update("lastName")}
+                            placeholder="Please enter your last name"
+                        />
+                    </label>
+                    <br />
+                    <label>Email:
+                        <input 
+                            type="text" 
+                            value={this.state.email}
+                            onChange={this.update("email")}
+                            placeholder="Please enter your email"
+                        />
+                    </label>
+                    <br />
+                    <label>Password:
+                        <input 
+                            type="password" 
+                            value={this.state.password}
+                            onChange={this.update("password")}
+                        />
+                    </label>
+                    <br />
+                    <label>Confirm Password:
+                        <input 
+                            type="password" 
+                            value={this.state.password2}
+                            onChange={this.update("password2")}
+                        />
+                    </label>
+                    <br />
                     <input className="signup-button" type="submit" value="Register" />
                     {this.renderErrors()}
                 </form>

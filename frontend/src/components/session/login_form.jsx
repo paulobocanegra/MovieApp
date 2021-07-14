@@ -21,8 +21,8 @@ class LoginForm extends React.Component {
             email: this.state.email,
             password: this.state.password,
         };
-        this.props.login(user, this.props.history)
-        // .then(() => this.props.login(user)).then(this.props.history.push('/movies'));
+        this.props.login(user)
+        .then(() => this.props.login(user)).then(this.props.history.push('/movies'));
     }
 
     update(field) {
@@ -46,17 +46,23 @@ class LoginForm extends React.Component {
         return (
             <div className="register-form-wrapper">
                 <form onSubmit={this.handleSubmit}>
-                    <input
-                        type="text"
-                        value={this.state.email}
-                        onChange={this.update("email")}
-                        placeholder="Please enter your email"
-                    />
-                    <input
-                        type="password"
-                        value={this.state.password}
-                        onChange={this.update("password")}
-                    />
+                    <label>Email:
+                        <input
+                            type="text"
+                            value={this.state.email}
+                            onChange={this.update("email")}
+                            placeholder="Please enter your email"
+                        />
+                    </label>
+                    <br />
+                    <label>Password:
+                        <input
+                            type="password"
+                            value={this.state.password}
+                            onChange={this.update("password")}
+                        />
+                    </label>
+                    <br />
                     <input className="signup-button" type="submit" value="Login" />
                     {this.renderErrors()}
                 </form>
