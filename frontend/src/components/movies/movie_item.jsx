@@ -5,13 +5,14 @@ class Movie extends React.Component{
 
     render(){
         return(
-            <div>
+            <div className="movie-item-wrapper">
                 <br />
-                Movies
-                <br />
-                {this.props.movie.title}    Rating:{this.props.movie.rating}
-                <button >Read Review</button>
-                <Link to={`/movies/${this.props.movie._id}/review`}>Write Review</Link>
+                <div className="movie-box">
+                    <p>{this.props.movie.title} </p>
+                    <p>Rating:{this.props.movie.rating}</p>
+                    <button >Read Review</button>
+                    <Link className="write-review-link" to={`/movies/${this.props.movie._id}/review`}>Write Review</Link>
+                </div>
             </div>
         )
     }

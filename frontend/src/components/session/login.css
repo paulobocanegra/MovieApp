@@ -6,7 +6,7 @@
     flex-direction: column;
     /* justify-content: center; */
     align-items: flex-start;
-    border-radius: 5%;
+    border-radius: 5px;
     margin-right: 3em;
 }
 
@@ -15,12 +15,16 @@
 }
 
 .register-form-wrapper > form > label > input{
-    border-radius: 5%;
+    border-radius: 5px;
     width: 100%;
     height: 20px;
 }
 
 .signup-button{
+    color: whitesmoke;
+    background-color: rgb(1, 85, 124);
+    border-radius: 5px;
+    height: 30px;
     box-shadow: 5px 5px gray;
 }
 
@@ -29,3 +33,26 @@
     flex-direction: column;
 }
 
+.add-movie-link{
+    display: flex;
+    justify-content: center;
+    /* align-self: flex-end; */
+    margin-left: 75%;
+    margin-bottom: 5px;
+    text-decoration: none;
+    background-color: rgb(1, 85, 124);
+    height: 30px;
+    width: 150px;
+    padding: 5px;
+    color: whitesmoke;
+    border-radius: 5px;
+    text-align: center;
+}
+
+footer{
+    display: flex;
+    justify-content: center;
+    font-size: 20px;
+    font-weight: 500;
+    margin-top: 20px;
+}
