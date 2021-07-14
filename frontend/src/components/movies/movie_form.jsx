@@ -1,4 +1,5 @@
 import React from 'react'
+import {Link} from 'react-router-dom'
 
 class MovieForm extends React.Component{
     constructor(props){
@@ -34,10 +35,12 @@ class MovieForm extends React.Component{
 
     render(){
         return(
-            <div>
-                <form onSubmit={this.handleSubmit}>
-                    <button onClick={() => this.props.logout()}>Logout</button>
-                    Submit a Movie and a Review 
+            <div className="create-movie-wrapper">
+                <div className="top-level">
+                    <h2>Submit a Movie and a Review </h2>
+                    <button className="logout-button" onClick={() => this.props.logout()}>Logout</button>
+                </div>
+                <form className="create-movie-form" onSubmit={this.handleSubmit}>
                     <br />
                     <label>Movie Tite:
                         <input 
@@ -73,7 +76,10 @@ class MovieForm extends React.Component{
                         />
                     </label>
                     <br />
-                    <input type="submit" />
+                    <div className="options">
+                        <input type="submit" />
+                        <Link to={`/movies`} className="cancel-button">Cancel</Link>
+                    </div>
                 </form>
             </div>
         )

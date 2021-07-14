@@ -21,6 +21,56 @@
     border-radius: 1px;
 }
 
+.create-movie-wrapper{
+    display: flex;
+    flex-direction: column;
+    border: dotted 2px gray;
+    border-radius: 10px;
+    width: 800px;
+    padding: 40px;
+}
+
+.create-movie-form{
+    margin-top: 20px;
+    display: flex;
+    flex-direction: column;
+}
+
+.create-movie-form > div > input {
+    width: 150px;
+    background-color: rgb(1, 85, 124);
+    color: whitesmoke;
+    border-radius: 10px;
+}
+
+.cancel-button{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background-color: rgb(1, 85, 124);
+    color: whitesmoke;
+    border-radius: 10px;
+    text-decoration: none;
+    width: 150px;
+    height: 20px;
+    margin-left: 40px;
+}
+
+.create-movie-form > label > input {
+    width: 250px;
+}
+
+.create-movie-form > label > textarea {
+    width: 250px;
+    height: 60px;
+}
+
+.options{
+    display: flex;
+    flex-direction: row;
+}
+
+
 .top-level{
     display: flex;
     flex-direction: row;
