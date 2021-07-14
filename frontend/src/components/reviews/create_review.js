@@ -1,3 +1,4 @@
+import "./review.css"
 import React from 'react';
 
 class CreateReview extends React.Component {
@@ -38,16 +39,17 @@ class CreateReview extends React.Component {
 
     render() {
         return (
-        <div>
-            <form onSubmit={this.handleSubmit}>
-                <label>Title
+        <div className="create-review-wrapper">
+            <h2>Wite New Review{this.state.name}</h2>
+            <form className="create-review-form" onSubmit={this.handleSubmit}>
+                <label>Title:
                     <input 
                         type="text"
                         value={this.state.title}
                         onChange={this.handleUpdate("title")}
                     />
                 </label>
-                <label>Name
+                <label>Name:
                     <input 
                         type="text"
                         value={this.state.name}
@@ -55,7 +57,7 @@ class CreateReview extends React.Component {
                     />
                 </label>
                 <br />
-                <label>Rating
+                <label>Rating:
                     <select name="ratings" id="rating" onChange={this.handleUpdate("rating")}  >
                         <option value="1">1</option>
                         <option value="2">2</option>
@@ -65,14 +67,17 @@ class CreateReview extends React.Component {
                     </select>
                 </label>
                 <br />
-                <label>Body
+                <label>Body:
                     <textarea
                         value={this.state.body}
                         onChange={this.handleUpdate("body")}
                     />
                 </label>
                 <br />
-                <input type="submit" />
+                <div>
+                    <input type="submit" />
+                    <button onClick={() => this.props.history.goBack()}>Cancel</button>
+                </div>
             </form>
         </div>
         )   

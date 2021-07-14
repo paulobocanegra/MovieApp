@@ -41,6 +41,7 @@
     background-color: rgb(1, 85, 124);
     color: whitesmoke;
     border-radius: 10px;
+    border: none;
 }
 
 .cancel-button{
@@ -52,7 +53,7 @@
     border-radius: 10px;
     text-decoration: none;
     width: 150px;
-    height: 20px;
+    height: 30px;
     margin-left: 40px;
 }
 

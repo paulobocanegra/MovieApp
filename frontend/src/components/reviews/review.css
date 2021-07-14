@@ -1,0 +1,25 @@
+.create-review-wrapper{
+    display: flex;
+    flex-direction: column;
+    border: dotted 2px gray;
+    border-radius: 10px;
+    width: 800px;
+    padding: 40px;
+}
+
+.create-review-form{
+    margin-top: 20px;
+    display: flex;
+    flex-direction: column;
+}
+
+.create-review-form > label > input {
+    margin-left: 10px;
+}
+.create-review-form > label > textarea {
+    margin-left: 10px;
+}
+
+.create-review-form > label > section {
+    margin-left: 10px;
+}
